@@ -21,3 +21,4 @@
 .env
 database.yml
 images/
+*.sum

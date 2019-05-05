@@ -1,6 +1,7 @@
 package routes
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/mattn/go-colorable"
 )
@@ -8,6 +9,11 @@ import (
 func ApiRouter() *gin.Engine {
 	gin.DefaultWriter = colorable.NewColorableStdout()
 	router := gin.Default()
+
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"*"}
+	router.Use(cors.New(config))
+
 	router.StaticFile("/robots.txt", "robots.txt")
 	router.StaticFile("/favicon.ico", "favicon.ico")
 	router.Static("/images", "./public/images/")
