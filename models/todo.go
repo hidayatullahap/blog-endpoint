@@ -4,19 +4,6 @@ import (
 	"time"
 )
 
-type Todo struct {
-	ID          int32
-	Title       string
-	Description string
-	Due         time.Time
-	Created     time.Time
-	Created     int32
-	Assigned    []int32
-	Status      Status
-	Deleted     bool
-	List        int32
-}
-
 type State int
 
 const (
@@ -27,11 +14,21 @@ const (
 
 type Status struct {
 	State State
-	Prior Status
 	Time  time.Time
 	User  int32
 }
 
+type Todo struct {
+	ID          int32
+	Title       string
+	Description string
+	Due         time.Time
+	Created     time.Time
+	Assigned    []int32
+	Status      Status
+	Deleted     bool
+	List        int32
+}
 type Comment struct {
 	ID         int32
 	Parent     int32
@@ -48,11 +45,3 @@ type Reaction struct {
 }
 
 type ObjectType int
-
-const (
-	Todo ObjectType = iota
-	TodoList
-	Status
-	Comment
-	Reaction
-)

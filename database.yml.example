@@ -1,0 +1,48 @@
+development:
+  dialect: "{{env "DATABASE_DIALECT" }}"
+  database: "{{env "DATABASE_NAME" }}"
+  host: "{{env "DATABASE_HOST" }}"
+  port: "{{env "DATABASE_PORT" }}"
+  user: "{{env "DATABASE_USER" }}"
+  password: "{{env "DATABASE_PASSWORD" }}"
+
+test:
+  dialect: "{{env "TEST_DATABASE_DIALECT" }}"
+  #
+  # You can use a single URL string for the same configuration:
+  #
+  #url: "mysql://root:root@(localhost:3306)/blog_test?parseTime=true&multiStatements=true&readTimeout=3s"
+  #
+  # Note that if you use `url`, other configurations are silently ignored.
+  # In this case, the URL must contain all required connection parameters.
+  #
+  database: "{{env "TEST_DATABASE_NAME" }}"
+  host: "{{env "TEST_DATABASE_HOST" }}"
+  port: "{{env "TEST_DATABASE_PORT" }}"
+  user: "{{env "TEST_DATABASE_USER" }}"
+  password: "{{env "TEST_DATABASE_PASSWORD" }}"
+
+production:
+  #
+  # You can also use environmental variables to override values in this config.
+  #
+  #url: {{envOr "DATABASE_URL" "mysql://root:root@(localhost:3306)/blog_production?parseTime=true&multiStatements=true&readTimeout=3s"}}
+  #
+  dialect: "{{env "PROCUTION_DATABASE_DIALECT" }}"
+  database: "{{env "PROCUTION_DATABASE_NAME" }}"
+  host: "{{env "PROCUTION_DATABASE_HOST" }}"
+  port: "{{env "PROCUTION_DATABASE_PORT" }}"
+  user: "{{env "PROCUTION_DATABASE_USER" }}"
+  password: "{{env "PROCUTION_DATABASE_PASSWORD" }}"
+  #
+  # And you can also override connection parameters by setting it under options.
+  #
+  #options:
+  #  parseTime: true
+  #  multiStatements: true
+  #  readTimeout: 3s
+  #  encoding: "utf8mb4_general_ci"
+  #
+  # CAUTION!
+  #   `parseTime` and` multiStatements` must be set to `true` to work properly.
+  #   If you are not sure, do not change (or set) these values.
