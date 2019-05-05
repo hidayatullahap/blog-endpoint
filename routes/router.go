@@ -10,8 +10,9 @@ func ApiRouter() *gin.Engine {
 	router := gin.Default()
 	router.StaticFile("/robots.txt", "robots.txt")
 	router.StaticFile("/favicon.ico", "favicon.ico")
+	router.Static("/images", "./public/images/")
 
-	api := router.Group("/api/v1/")
+	api := router.Group("/api/v1")
 	home := router.Group("/")
 
 	// Categories
