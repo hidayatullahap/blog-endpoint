@@ -20,3 +20,4 @@
 #settings
 .env
 database.yml
+/images
