@@ -12,7 +12,8 @@ func DbConnect() (db *sqlx.DB) {
 	dbPort := os.Getenv("DATABASE_PORT")
 	dbUser := os.Getenv("DATABASE_USER")
 	dbPassword := os.Getenv("DATABASE_PASSWORD")
-	dbConnect := dbUser + ":" + dbPassword + "@tcp(" + dbHost + ":" + dbPort + ")/" + dbName + "?parseTime=true"
+	dbTimezone := os.Getenv("DATABASE_TZ")
+	dbConnect := dbUser + ":" + dbPassword + "@tcp(" + dbHost + ":" + dbPort + ")/" + dbName + "?parseTime=true&loc=" + dbTimezone + "&charset=utf8mb4&collation=utf8mb4_unicode_ci"
 
 	dbConnection := sqlx.MustConnect("mysql", dbConnect)
 
