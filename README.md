@@ -30,6 +30,7 @@ Click here to see [config] documentation.
 
 Finaly run this command to migrate your database
 ```sh
+$ soda create -e development
 $ soda migrate up
 ```
 
