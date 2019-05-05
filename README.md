@@ -28,9 +28,11 @@ $ soda g config -t mysql
 ```
 Click here to see [config] documentation.
 
-Finaly run this command to migrate your database (this project using mysql)
+Finaly run this command to migrate your database
 ```sh
 $ soda migrate up
 ```
+
+If you want to skip installing soda CLI you can dump your table with schema.sql inside /migrations
 
 Click here to see full [Toolbox] documentation.
