@@ -8,6 +8,7 @@ import (
 	"github.com/hidayatullahap/blog-endpoint/logging"
 	"github.com/hidayatullahap/blog-endpoint/routes"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 )
 

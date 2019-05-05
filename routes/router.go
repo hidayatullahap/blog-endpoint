@@ -1,8 +1,6 @@
 package routes
 
 import (
-	"os"
-
 	"github.com/gin-gonic/gin"
 	"github.com/mattn/go-colorable"
 )
@@ -17,12 +15,14 @@ func ApiRouter() *gin.Engine {
 	home := router.Group("/")
 
 	// Categories
-	api.GET("/c", ListCategory) //LIST Categories
+	// api.GET("/c", ListCategory) //LIST Categories
+	// api.POST("/c", CreateCategory)      //CREATE Category
+	// api.GET("/c/:id", RetrieveCategory) //RETRIEVE Category
+	// api.PATCH("/c/:id", AlterCategory)  //ALTER Category
+	// api.DELETE("/c/:id", PurgeCategory) //PURGE Category
 
-	api.POST("/c", CreateCategory)      //CREATE Category
-	api.GET("/c/:id", RetrieveCategory) //RETRIEVE Category
-	api.PATCH("/c/:id", AlterCategory)  //ALTER Category
-	api.DELETE("/c/:id", PurgeCategory) //PURGE Category
+	//Posts
+	api.GET("/p", ListPosts)
 
 	// To use auth routes you must have had a JWT token issued to you
 	// and requests must have the following header:
@@ -41,11 +41,7 @@ func ApiRouter() *gin.Engine {
 }
 
 func HomePage(c *gin.Context) {
-	s3Bucket := os.Getenv("S3_BUCKET")
-	secretKey := os.Getenv("SECRET_KEY")
 	c.JSON(200, gin.H{
 		"message": "pong",
-		"s3":      s3Bucket,
-		"secret":  secretKey,
 	})
 }
