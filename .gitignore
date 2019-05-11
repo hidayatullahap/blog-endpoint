@@ -22,5 +22,4 @@
 database.yml
 images/
 
-go.sum
 go.mod
