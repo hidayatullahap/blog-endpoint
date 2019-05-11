@@ -21,4 +21,6 @@
 .env
 database.yml
 images/
-*.sum
+
+go.sum
+go.mod
