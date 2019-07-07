@@ -37,3 +37,5 @@ $ soda migrate up
 If you want to skip installing soda CLI you can dump your table with schema.sql inside /migrations
 
 Click here to see full [Toolbox] documentation.
+
+PS: GOLANG IS REALLY SLOW FOR RAPID DEV. IT'S GOOD FOR MICROSERVICES WHICH I DIDN'T NEED IN THIS PROJECT. USE ROR/LARAVEL/NEST.JS INSTEAD
